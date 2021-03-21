@@ -1,0 +1,20 @@
+# NOTICE:
+# Vue app will only detect VUE_APP_* envs
+
+# Django
+DEBUG=True
+SECRET_KEY=<AWESOME KEY GOES HERE>
+
+DOMAIN=http://localhost:80
+ALLOWED_HOSTS=*
+
+# PostgreSQL
+POSTGRES_DB=britecore_hiring_project
+POSTGRES_PASSWORD=<DAT PASS>
+POSTGRES_USER=<DAT USER>
+
+
+
+
+
+
