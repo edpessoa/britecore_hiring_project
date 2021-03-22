@@ -2,14 +2,14 @@
   <div class="form-control">
     <label>{{ field.name }}</label>
     <label class="input">
-      <input class="input" type="text">
+      <input class="input" type="number">
     </label>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'TextInput',
+  name: 'NumberInput',
   props: {
     field: { required: true },
     data: { required: false }

@@ -2,14 +2,18 @@
   <div class="form-control">
     <label>{{ field.name }}</label>
     <label class="input">
-      <input class="input" type="text">
+      <select>
+        <option v-for="option in field.options" v-bind:key="option">
+          {{ option }}
+        </option>
+      </select>
     </label>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'TextInput',
+  name: 'EnumInput',
   props: {
     field: { required: true },
     data: { required: false }
