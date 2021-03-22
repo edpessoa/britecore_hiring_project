@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import ExampleComponent from '@/components/RiskTypeForm.vue'
+import RiskTypeForm from '@/components/RiskTypeForm.vue'
 
 const routes = [
-  { path: '*', component: ExampleComponent }
+  { path: '*', component: RiskTypeForm }
 ]
 
 Vue.use(VueRouter)

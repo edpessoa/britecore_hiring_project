@@ -8,7 +8,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
 import environ
-from datetime import timedelta
 
 ROOT_DIR = environ.Path(__file__) - 2
 
@@ -23,7 +22,6 @@ DJANGO_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "django.contrib.admin",
 ]
 
 THIRD_PARTY_APPS = [
@@ -33,6 +31,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "apps.users",
+    "apps.risks",
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -59,11 +58,6 @@ SECRET_KEY = env.str("SECRET_KEY")
 # DOMAINS
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["*"])
 DOMAIN = env.str("DOMAIN")
-
-# EMAIL CONFIGURATION
-# ------------------------------------------------------------------------------
-EMAIL_PORT = env.int("EMAIL_PORT", default="1025")
-EMAIL_HOST = env.str("EMAIL_HOST", default="mailhog")
 
 # MANAGER CONFIGURATION
 # ------------------------------------------------------------------------------

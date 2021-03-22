@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-      New user:
-        <d-form :schema="formSchema" :data="formData"></d-form>
-      <hr>
-      Users list:
-      <div v-for='user in users' :key='user.id'>
-        {{user.email}}
-      </div>
+    <h1>Risk Type Forms</h1>
+    <div class="loop" v-for='risk in risks' :key='risk.id'>
+      <label>Form name: {{risk.name}}</label>
+      <br>
+      <label>Fields:</label>
+      <d-form :schema="risk"></d-form>
+    </div>
   </div>
 </template>
 
@@ -17,49 +17,30 @@ export default {
   name: 'RiskTypeForm',
   components: { DForm },
   computed: {
-    users () {
-      return this.$store.state.users.users
+    risks () {
+      return this.$store.state.risks.risks
     }
   },
   mounted () {
-    this.$store.dispatch('getUsersList')
-  },
-  data () {
-    return {
-      formSchema: {
-        fields: [
-          {
-            type: 'text-input',
-            name: 'first_name',
-            label: 'First name',
-            placeholder: 'Enter first name'
-          },
-          {
-            type: 'text-input',
-            name: 'last_name',
-            label: 'Last name',
-            placeholder: 'Enter last name'
-          },
-          {
-            type: 'checkbox-input',
-            name: 'is_admin',
-            label: 'Administrator',
-            placeholder: 'Sure, why not'
-          }
-        ]
-      },
-      formData: {
-        first_name: {
-          value: ''
-        },
-        last_name: {
-          value: ''
-        },
-        is_admin: {
-          value: false
-        }
-      }
-    }
+    this.$store.dispatch('getRisksList')
   }
 }
 </script>
+
+<style scoped>
+  h1 {
+    text-align: center;
+  }
+
+  .loop {
+    background: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 1rem 1em 1em;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  .loop label {
+    padding-left: 5rem;
+    display: block;
+  }
+</style>

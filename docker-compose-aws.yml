@@ -9,8 +9,6 @@ networks:
 
 services:
   backend:
-    build:
-      context: ./backend
     image: edpessoa/bc-back
     depends_on:
       - postgres
@@ -26,14 +24,8 @@ services:
     env_file: .env
 
   nginx:
-    build:
-      context: .
-      dockerfile: nginx/Dockerfile
     image: edpessoa/bc-front
     ports:
       - "80:80"
     depends_on:
       - backend
-
-
-

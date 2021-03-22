@@ -1,8 +1,8 @@
 <template>
   <div class="form-control">
-    <label>{{ field.label }}</label>
+    <label>{{ field.name }}</label>
     <label class="input">
-      <input type="checkbox" v-model="data.value">
+      <input type="checkbox">
       {{ field.placeholder }}
     </label>
   </div>
@@ -12,12 +12,7 @@
 export default {
   name: 'CheckboxInput',
   props: {
-    field: { required: true },
-    data: { required: true }
+    field: { required: true }
   }
 }
 </script>
-
-<style scoped>
-
-</style>

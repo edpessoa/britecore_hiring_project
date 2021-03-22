@@ -2,14 +2,17 @@
   <div class="form-control">
     <label>{{ field.name }}</label>
     <label class="input">
-      <input class="input" type="text">
+      <Datepicker placeholder="Click to choose a date"></Datepicker>
     </label>
   </div>
 </template>
 
 <script>
+import Datepicker from 'vuejs-datepicker'
+
 export default {
-  name: 'TextInput',
+  name: 'DateInput',
+  components: { Datepicker },
   props: {
     field: { required: true },
     data: { required: false }
